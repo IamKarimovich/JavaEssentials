@@ -9,13 +9,10 @@ import java.net.Socket;
 public class Server {
 
     private Socket socket = null;
-
     private ServerSocket serverSocket = null;
     private DataInputStream dataInputStream = null;
 
     public Server(int port) {
-
-
 
         try {
             serverSocket = new ServerSocket(port);
@@ -40,25 +37,16 @@ public class Server {
                     throw new RuntimeException(e);
                 }
                 System.out.println(line);
-
-
             }
 
             System.out.println("Server closing...");
             dataInputStream.close();
             serverSocket.close();
 
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-
-
-
-
     }
-
 
     public static void main(String[] args) {
         Server server = new Server(5000);
